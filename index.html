@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LUTZZ GMAIL JOB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div class="ambient a"></div><div class="ambient b"></div>
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">L</span><span>LUTZZ <b>GMAIL JOB</b><small>WORK • EARN • WITHDRAW</small></span></a><div class="top-actions"><span id="connection" class="pill muted">Belum terhubung</span><button id="logoutBtn" class="btn ghost hidden">Keluar</button></div></header>
+<main>
+<section id="authView" class="auth-wrap">
+  <div class="hero"><span class="eyebrow">PLATFORM MICRO-TASK</span><h1>Kerja digital.<br><span>Reward transparan.</span></h1><p>Kerjakan pengujian email yang sah, kirim hasil, dan pantau reward setelah diverifikasi.</p><div class="hero-points"><span>✓ Job terverifikasi</span><span>✓ Riwayat saldo</span><span>✓ Permintaan DANA</span></div></div>
+  <div class="panel auth-panel"><div class="panel-head"><span class="eyebrow">MEMBER AREA</span><h2>Masuk / Daftar</h2><p>Gunakan email milikmu sendiri.</p></div><label>Email<input id="email" type="email" placeholder="nama@email.com" autocomplete="email"></label><label>Password<input id="password" type="password" placeholder="Minimal 8 karakter" autocomplete="current-password"></label><button id="loginBtn" class="btn primary full">Masuk</button><button id="signupBtn" class="btn secondary full">Buat akun</button><p class="tiny">Dengan mendaftar, kamu menyetujui aturan job dan kebijakan privasi.</p><p id="authMsg" class="message"></p></div>
+</section>
+<section id="appView" class="hidden">
+  <div class="welcome"><div><span class="eyebrow">DASHBOARD</span><h1>Halo, <span id="userEmail">Member</span></h1><p>Berikut ringkasan akun dan pekerjaanmu.</p></div><div class="avatar" id="avatar">U</div></div>
+  <div class="stats">
+    <article class="balance-card"><div class="stat-label">SALDO TERSEDIA</div><div class="money" id="balance">Rp0</div><div class="balance-foot"><span>Reward Rp4.000 / job disetujui</span><span class="live-dot">● LIVE</span></div></article>
+    <article class="stat-card"><span class="stat-icon">◈</span><span class="stat-label">SALDO TERTUNDA</span><strong id="pending">Rp0</strong><small>Menunggu pemeriksaan</small></article>
+    <article class="stat-card"><span class="stat-icon">✓</span><span class="stat-label">JOB DISETUJUI</span><strong id="approved">0</strong><small>Total job valid</small></article>
+  </div>
+  <div class="content-grid">
+    <section class="panel"><div class="section-head"><div><span class="eyebrow">TASK CENTER</span><h2>Job tersedia</h2></div><span class="pill purple">Rp4.000 / job</span></div>
+      <article class="job-card"><div class="job-icon">✉</div><div class="job-info"><h3>Uji alur email (sandbox)</h3><p>Uji pengiriman dan penerimaan email pada alamat uji yang disediakan admin. Tidak perlu membuat akun Gmail baru.</p><div class="tags"><span>± 5–10 menit</span><span>Testing legal</span></div></div><button id="claimJobBtn" class="btn primary">Ambil job</button></article>
+      <div class="notice"><b>Aturan penting</b><p>Jangan kirim password, OTP, recovery code, atau akses akun. Job tidak membayar pembuatan akun massal, spam, atau bypass verifikasi.</p></div>
+    </section>
+    <section class="panel"><div class="section-head"><div><span class="eyebrow">WALLET</span><h2>Tarik saldo</h2></div><span class="wallet-logo">DANA</span></div>
+      <form id="withdrawForm"><label>Nomor DANA<input id="danaNumber" inputmode="numeric" placeholder="08xxxxxxxxxx" required></label><label>Nama penerima<input id="danaName" placeholder="Nama sesuai akun DANA" required></label><label>Jumlah penarikan (Rp)<input id="withdrawAmount" type="number" min="10000" step="1000" placeholder="Minimal Rp10.000" required></label><button class="btn primary full" type="submit">Ajukan penarikan</button></form><p class="tiny">Permintaan diproses setelah pemeriksaan admin dan ketersediaan provider payout. Biaya, minimum, dan estimasi mengikuti ketentuan provider.</p><p id="withdrawMsg" class="message"></p>
+    </section>
+  </div>
+  <section class="panel history"><div class="section-head"><div><span class="eyebrow">ACTIVITY</span><h2>Aktivitas terbaru</h2></div><button id="refreshBtn" class="btn ghost">↻ Perbarui</button></div><div class="tabs"><button class="tab active" data-tab="jobs">Job saya</button><button class="tab" data-tab="transactions">Transaksi</button></div><div id="historyList" class="history-list"><div class="empty">Belum ada aktivitas.</div></div></section>
+</section>
+<footer><span>© 2026 LUTZZ GMAIL JOB</span><span>Secure member workspace</span></footer>
+</main>
+<div id="toast" class="toast"></div>
+<script src="config.js"></script><script src="app.js"></script>
+</body></html>
